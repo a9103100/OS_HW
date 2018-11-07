@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct M  {
+        int a;
+        char b;
+        float c;
+        double d;
+        char* str;
+        } mailbox;
+        
+void * A(void* m)
+{
+    mailbox * M=m; 
+    printf("%d\n",M->a);
+    return m; 
+}
+
+int main()
+{
+    mailbox test;
+    test.a=10;
+    void * test_ptr;
+    mailbox * M_ptr;
+    
+    printf("void* size:%d\nmailbox* size:%d\n",sizeof(test_ptr),sizeof(M_ptr));
+    test_ptr=&test;    
+    A(test_ptr);
+    system("pause");
+    return 0;
+}

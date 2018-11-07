@@ -1,0 +1,11 @@
+int pos = 0;
+    while(time(0) < end)
+    {
+        int c = getchar();
+        /* 10 is new line */
+        if (c != EOF && c != 10 && pos < INPUT_LEN - 1)
+            answer[pos++] = c;
+        /* if new line entered we are ready */
+        if (c == 10)
+            break;
+    }

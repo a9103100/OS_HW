@@ -1,0 +1,3 @@
+gcc -c -o Mailbox.o Mailbox.c
+gcc -pthread -o server server.c Mailbox.o -lrt
+gcc -pthread -o client client.c Mailbox.o -lrt
